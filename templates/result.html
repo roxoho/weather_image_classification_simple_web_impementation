@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>YOLO Weather Classifier Results</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <h1>YOLO Weather Classifier Results</h1>
+  <table border="1">
+    <tr>
+      <th>Image</th>
+      <th>Weather Result</th>
+    </tr>
+    {% for prediction in predictions %}
+      <tr>
+        <td>{{ prediction[0] }}</td>
+        <td>{{ prediction[1] }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+  <a href="{{ url_for('index') }}">Go to Home</a>
+</body>
+</html>
